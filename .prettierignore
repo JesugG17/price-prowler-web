@@ -1,0 +1,8 @@
+# Ignore artifacts:
+build
+coverage
+# Logs
+node_modules
+yarn.lock
+public
+README.md
