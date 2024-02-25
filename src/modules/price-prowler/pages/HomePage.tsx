@@ -25,7 +25,10 @@ export const HomePage = () => {
   return (
     <div className='flex flex-col gap-3 p-4'>
       <div className='flex items-center justify-between'>
-        <h1 className='text-center text-3xl font-bold flex-1'>PriceProwler</h1>
+        <div className='w-10 objet-contain'>
+          <img src="/img/logo-priceprowler.svg" alt="" />
+        </div>
+        <h1 className='text-center text-3xl font-custom font-bold flex-1'>Price Prowler</h1>
         <div className='p-2 relative border-2 border-black rounded'>
           <img className='w-6' src='/img/eye.png' alt='Hear icon' />
           {productsAdded.length !== 0 && (
@@ -35,15 +38,15 @@ export const HomePage = () => {
           )}
         </div>
       </div>
-      <form className='flex p-2 bg-slate-200 rounded'>
+      <form className='flex p-2 bg-stone-100 rounded-3xl'>
         <input
-          className='flex-1 bg-transparent focus:outline-none'
+          className='flex-1 bg-transparent pl-3 italic focus:outline-none'
           type='text'
           placeholder='Search a product'
         />
-        <img src='/img/search.png' alt='search icon' />
+        <img className='mr-2' src='/img/search.png' alt='search icon' />
       </form>
-      <ul className='flex flex-wrap gap-5 justify-center px-4'>
+      <ul className='flex flex-wrap gap-5 justify-center '>
         {TEST_PRODUCTS.map((product, index) => (
           <ProductCard
             product={product}

@@ -17,22 +17,25 @@ export const ProductCard: FC<Props> = ({ product, removeProduct, addProduct }) =
   };
 
   return (
-    <li className='w-4/5 p-2 flex flex-col gap-3 rounded shadow-lg'>
-      <img className='w-full rounded h-auto' src={product.img} alt='Product image' />
-      <h4>
-        <strong>{product.name}</strong>
-      </h4>
-      <p className='text-sm opacity-60'>Product description goes here</p>
-      <p>
-        Price: <strong className='text-violet-500'>${product.price}</strong>
+    <li className='w-100 p-4 flex gap-2 rounded shadow-lg sm:w-2/5 lg:w-2/6'>
+      <img className='w-2/5 rounded-xl h-auto ' src={product.img} alt='Product image' />
+      <div>
+       <h4>
+         <strong className='text-xl text-gray-600'>{product.name}</strong>
+       </h4>
+       <p className='text-sm opacity-60'>Store</p>
+       <p>
+        <strong className='text-gray-700'>${product.price}</strong>
       </p>
-      <div className='flex justify-between text-sm'>
+      </div>
+     
+      <div className='flex flex-col justify-between text-sm'>
         <a
           href={product.link}
           target='_blank'
-          className='rounded-full border-2 p-2 border-violet-600 text-violet-500 hover:bg-violet-600 hover:text-slate-200 transition-all duration-200'
+          className='flex justify-center objet-contain w-8 h-8 rounded-full border-2 p-2 border-indigo-900 text-indigo-900 hover:bg-indigo-900 hover:text-slate-200 transition-all duration-200'
         >
-          Visit product
+          <img src="/img/icon-web.svg" alt="" />
         </a>
         <button onClick={handleFav} className='rounded-full p-2'>
           {isAddedToFavs ? (
