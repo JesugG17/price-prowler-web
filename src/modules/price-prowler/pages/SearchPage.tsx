@@ -1,19 +1,11 @@
-import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { ProductCard } from '../components/ProductCard';
 import { TEST_PRODUCTS } from '@/common/constants/products';
-import { Product } from '@/common/types/products.interface';
+import { useProducts } from '../../../common/context/price-prowler/ProductsAddedProvider';
 
 export const SearchPage = () => {
-  const [productsAdded, setProductsAdded] = useState<Product[]>([]);
-
-  const addProduct = (product: Product) => {
-    setProductsAdded((prevState) => [product, ...prevState]);
-  };
-
-  const removeProduct = (productId: string) => {
-    const newProductsAdded = productsAdded.filter((product) => product.id !== productId);
-    setProductsAdded(newProductsAdded);
-  };
+  const navigate = useNavigate();
+  const { products, addProduct, removeProduct } = useProducts();
 
   return (
     <div className='flex flex-col gap-3 p-4'>
@@ -22,11 +14,14 @@ export const SearchPage = () => {
           <img src='/img/logo-priceprowler.svg' alt='' />
         </div>
         <h1 className='text-center text-3xl font-custom font-bold flex-1'>Price Prowler</h1>
-        <div className='p-2 relative border-2 border-black rounded'>
+        <div
+          onClick={() => products.length !== 0 && navigate('/tracking')}
+          className='p-2 relative border-2 border-black rounded'
+        >
           <img className='w-6' src='/img/eye.png' alt='Hear icon' />
-          {productsAdded.length !== 0 && (
+          {products.length !== 0 && (
             <div className='w-6 h-6 flex absolute bottom-7 left-7 justify-center rounded-full bg-red-600 text-white'>
-              {productsAdded.length}
+              {products.length}
             </div>
           )}
         </div>
@@ -41,7 +36,7 @@ export const SearchPage = () => {
           <img className='mr-2' src='/img/search.png' alt='search icon' />
         </form>
       </div>
-      <ul className='flex flex-wrap gap-5 justify-center '>
+      <ul className='grid grid-cols-1 gap-2 justify-center sm:grid-cols-2 lg:grid-cols-3'>
         {TEST_PRODUCTS.map((product, index) => (
           <ProductCard
             product={product}

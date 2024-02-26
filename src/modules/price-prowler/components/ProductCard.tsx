@@ -17,7 +17,7 @@ export const ProductCard: FC<Props> = ({ product, removeProduct, addProduct }) =
   };
 
   return (
-    <li className='w-full max-w-xs p-4 flex gap-2 rounded shadow-lg sm:w-2/5 lg:w-2/6'>
+    <li className='w-full p-4 flex gap-2 rounded shadow-lg'>
       <img className='w-2/5 rounded-xl h-auto ' src={product.img} alt='Product image' />
       <div>
         <h4>
