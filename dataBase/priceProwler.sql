@@ -5,6 +5,8 @@ CREATE TABLE users (
 	mail nvarchar(50) not null unique,
 	contrasenia nvarchar(20) not null
 );
+ALTER TABLE users
+ADD CONSTRAINT pk_users PRIMARY KEY(mail);
 
 CREATE TABLE userProfile(
 	mail nvarchar(50),
@@ -34,7 +36,6 @@ CREATE TABLE wishList(
 	idWishList int not null,
 	idUser int not null,
 	idProduct int not null,
-	productName nvarchar(250) not null,
 	creationDate datetime not null,
 	available bit not null
 );
