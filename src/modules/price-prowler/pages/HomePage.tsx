@@ -14,7 +14,7 @@ export const HomePage = () => {
       >
         Comenzar
       </Link>
-      <div className='bg-slate-200 w-40 h-40 opacity-30 rounded-full absolute -top-12 -right-12'></div>
+      <div className='bg-slate-200 w-40 h-40 -z-10 opacity-30 rounded-full absolute -top-12 -right-12'></div>
       <div className='bg-slate-200 w-40 h-40 opacity-30 rounded-full absolute -bottom-12 -left-12'></div>
     </div>
   );
