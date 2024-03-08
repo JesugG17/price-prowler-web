@@ -1,0 +1,65 @@
+$padding: 1.5rem;
+$padding-lateral: 2.5rem;
+$nav-gap: 1.25rem;
+$light-blue: #6173FF;
+
+
+header{
+    font: {
+        size: 1rem;
+        weight: 500;
+    };
+    background-color: whitesmoke;
+    border-bottom: 1px solid darken($color: whitesmoke, $amount: 5);
+    padding: $padding $padding-lateral;
+    width: 100vw;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+    div{
+        display: flex;
+        gap: $nav-gap;
+    }
+    
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    gap: $nav-gap;
+
+    li{
+        border-bottom: 2px transparent;
+        transition: border-bottom-color 0.3s ease-out;
+
+        &:hover{
+            color: $light-blue;
+            border-bottom: 2px solid $light-blue;
+        }
+    }
+}
+
+.container-nav-button{
+    button{
+        align-items: center;
+        display: flex;
+        border: 1px solid gainsboro {
+            radius: 0.5rem;
+        };
+        padding: 0.5rem;
+
+        transition: background-color 0.3s ease-out;
+        transition: border-color 0.3s ease-out;
+        &:hover{
+            color: lighten($color: $light-blue, $amount: 3);
+            background-color: lighten($color: whitesmoke, $amount: 10);
+            border: 1px solid darken($color: whitesmoke, $amount: 30);
+            box-shadow: 0px 0.25rem 0.25rem lighten(whitesmoke, 20);
+        }
+    }
+
+   
+}

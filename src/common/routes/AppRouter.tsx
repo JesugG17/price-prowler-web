@@ -1,8 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router';
-import { HomePage } from '../../modules/price-prowler/pages/HomePage';
+import { HomePage } from '../../modules/price-prowler/pages/HomePage/HomePage';
 import { TrackingPage } from '../../modules/price-prowler/pages/TrackingPage';
 import { SearchPage } from '@/modules/price-prowler/pages/SearchPage';
-import { Header } from '../../modules/ui/components/Header';
+import { Header } from '../../modules/ui/components/Header/Header';
 
 export const AppRouter = () => {
   return (
