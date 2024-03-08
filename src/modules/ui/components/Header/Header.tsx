@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Sidebar } from '../Sidebar';
-import './Header.scss'
+import './Header.scss';
 
 export const Header = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);

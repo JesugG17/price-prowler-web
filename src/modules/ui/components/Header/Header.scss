@@ -3,6 +3,11 @@ $padding-lateral: 2.5rem;
 $nav-gap: 1.25rem;
 $light-blue: #6173FF;
 
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 header{
     font: {
