@@ -1,13 +1,4 @@
-$padding: 1.5rem;
-$padding-lateral: 2.5rem;
-$nav-gap: 1.25rem;
-$light-blue: #6173FF;
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import '../../../../global.scss';
 
 header{
     font: {
@@ -16,17 +7,17 @@ header{
     };
     background-color: whitesmoke;
     border-bottom: 1px solid darken($color: whitesmoke, $amount: 5);
-    padding: $padding $padding-lateral;
+    padding: $lengt-md3 $lengt-lg2;
     width: 100vw;
 }
 
 nav{
     display: flex;
     justify-content: space-between;
-    height: 2rem;
+    height: $lengt-lg1;
     div{
         display: flex;
-        gap: $nav-gap;
+        gap: $lengt-md2;
     }
     
 }
@@ -34,7 +25,7 @@ nav{
 ul{
     display: flex;
     align-items: center;
-    gap: $nav-gap;
+    gap: $lengt-md2;
 
     li{
         border-bottom: 2px transparent;
@@ -54,7 +45,7 @@ ul{
         border: 1px solid gainsboro {
             radius: 0.5rem;
         };
-        padding: 0.5rem;
+        padding: $lengt-sm2;
 
         transition: background-color 0.3s ease-out;
         transition: border-color 0.3s ease-out;
