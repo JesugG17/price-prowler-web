@@ -1,7 +1,10 @@
+//Colors
 $black: #1F1F1F;
 $light-blue: #6173FF;
-$white: #FFF;
+$white: #F4F4F4;
+$text-xl: 2rem;
 
+//lengths
 $lengt-sm1: 0.25rem;
 $lengt-sm2: 0.5rem;
 $lengt-sm3: 0.75rem;
@@ -18,3 +21,9 @@ $lengt-lg3: 4rem;
     margin: 0;
     padding: 0;
 }
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
