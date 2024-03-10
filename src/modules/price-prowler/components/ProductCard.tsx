@@ -1,5 +1,6 @@
 import { Product } from '@/common/types/products.interface';
 import { FC, useState } from 'react';
+import './ProductCard.scss';
 
 export const ProductCard: FC<Props> = ({ product, removeProduct, addProduct }) => {
   const [isAddedToFavs, setIsAddedToFavs] = useState(false);
@@ -17,27 +18,26 @@ export const ProductCard: FC<Props> = ({ product, removeProduct, addProduct }) =
   };
 
   return (
-    <li className='w-full p-4 flex gap-2 rounded shadow-lg'>
-      <img className='w-2/5 rounded-xl h-auto ' src={product.img} alt='Product image' />
-      <div>
+    <li className='item-product'>
+      <img className='product-img' src={product.img} alt='Product image' />
+      <div className='product-info'>
         <h4>
-          <strong className='text-xl text-gray-600'>{product.name}</strong>
+          <strong>{product.name}</strong>
         </h4>
-        <p className='text-sm opacity-60'>Store</p>
+        <p className='product-info-store'>Store</p>
         <p>
-          <strong className='text-gray-700'>${product.price}</strong>
+          <strong>${product.price}</strong>
         </p>
       </div>
 
-      <div className='flex flex-col justify-between text-sm'>
+      <div className='container-actions-tracking'>
         <a
           href={product.link}
           target='_blank'
-          className='flex justify-center objet-contain w-8 h-8 rounded-full border-2 p-2 border-indigo-900 text-indigo-900 hover:bg-indigo-900 hover:text-slate-200 transition-all duration-200'
         >
           <img src='/img/icon-web.svg' alt='' />
         </a>
-        <button onClick={handleFav} className='rounded-full p-2'>
+        <button onClick={handleFav}>
           {isAddedToFavs ? (
             <img src='/img/red-heart.png' alt='' />
           ) : (

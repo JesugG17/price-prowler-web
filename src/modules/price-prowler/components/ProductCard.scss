@@ -1,0 +1,57 @@
+@import '../../../global.scss';
+
+.item-product{
+    width: 100%;
+    border: 1px solid lighten($color: $light-blue, $amount: 28);
+    border-radius: 0.75rem;
+    box-shadow: 0px 0.25rem 0.25rem lighten($black, 75);
+    display: flex;
+    gap: $lengt-sm3;
+    padding: $lengt-md1;
+}
+
+//w-2/5 rounded-xl h-auto 
+.product-img{
+    width: 40%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.product-info{
+    
+    h4{
+        font-size: 1.5rem;
+        color: $dark-grayish-blue;
+    }
+    .product-info-store{
+        font-size: 0.85rem;
+        opacity: 60%;
+    }
+}
+
+.container-actions-tracking{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    //flex justify-center objet-contain w-8 h-8 rounded-full border-2 p-2 border-indigo-900 text-indigo-900 hover:bg-indigo-900 hover:text-slate-200 transition-all duration-200
+    a{
+        @include flex-center;
+        object-fit: contain;
+        width: 2.25rem;
+        height: 2.25rem;
+        border: 2px solid lighten($color: $light-blue, $amount: 20);
+        border-radius: 50%;
+        padding: $lengt-sm2;
+
+        transition: background-color 0.3s ease;
+        &:hover{
+            background-color: lighten($color: $light-blue, $amount: 10);
+            border: 1px solid darken($color: $light-blue, $amount: 10);
+        }
+    }
+    
+    button{
+        padding: $lengt-sm2;
+    }
+}
