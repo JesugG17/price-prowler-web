@@ -1,5 +1,5 @@
 import { useProducts } from '@/common/context/price-prowler/ProductsAddedProvider';
-import { ProductCard } from '../../components/ProductCard';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { useNavigate } from 'react-router';
 import './TrackingPage.scss';
 

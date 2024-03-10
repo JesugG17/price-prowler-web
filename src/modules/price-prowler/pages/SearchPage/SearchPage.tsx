@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router';
-import { ProductCard } from '../../components/ProductCard';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { TEST_PRODUCTS } from '@/common/constants/products';
 import { useProducts } from '../../../../common/context/price-prowler/ProductsAddedProvider';
 import './SearchPage.scss'
