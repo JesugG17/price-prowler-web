@@ -1,0 +1,40 @@
+@import '../../../../global.scss';
+
+    .header-tracking-page{ 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $lengt-sm3 $lengt-md3;
+        
+        button{
+            background-color: $light-blue;
+            color: $white;
+            border: 1px solid darken($color: $light-blue, $amount: 3);
+            border-radius: 0.5rem;
+            padding: $lengt-sm1 $lengt-sm3;            
+
+            transition: background-color 0.3 ease, color 0.3s ease;
+            &:hover{
+                background-color: $white;
+                color: $light-blue;
+                box-shadow: 0px 0.25rem 0.25rem lighten($light-blue, 20);
+            }
+        }
+
+        h1{
+            font: {
+                size: 1.75rem;
+                weight: 600;
+            } 
+            text-align: center;
+            flex: 1;
+        }
+    }
+
+//flex flex-wrap gap-5 justify-center 
+.list-tracking{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: $lengt-sm3 $lengt-lg1;
+}
