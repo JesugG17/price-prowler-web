@@ -41,6 +41,7 @@ $text-xl: 2rem;
 //'bg-slate-200 w-40 h-40 -z-10 opacity-30 rounded-full absolute -top-12 -right-12
 @mixin bg-circle($top:auto, $right:auto, $bottom:auto, $left:auto){
     background-color: #e2e8f0;
+    border: 1px solid darken($color: #e2e8f0, $amount: 20);
     border-radius: 50%;
     height: 10rem;
     opacity: 30%;
@@ -59,6 +60,6 @@ $text-xl: 2rem;
     @include bg-circle(-3rem, -3rem)
 }
 .bg-circle-bottom{
-    @include bg-circle(null, null, 3rem, -1.5rem)
+    @include bg-circle(null, null, -3rem, -2rem)
 }
 //'bg-slate-200 w-40 h-40 opacity-30 rounded-full absolute -bottom-12 -left-12

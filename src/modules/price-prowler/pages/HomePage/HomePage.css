@@ -35,6 +35,7 @@
 
 .bg-circle-top {
   background-color: #e2e8f0;
+  border: 1px solid #9fb3cd;
   border-radius: 50%;
   height: 10rem;
   opacity: 30%;
@@ -49,12 +50,13 @@
 
 .bg-circle-bottom {
   background-color: #e2e8f0;
+  border: 1px solid #9fb3cd;
   border-radius: 50%;
   height: 10rem;
   opacity: 30%;
   width: 10rem;
   position: absolute;
-  bottom: 3rem;
-  left: -1.5rem;
+  bottom: -3rem;
+  left: -2rem;
   z-index: -10;
 }/*# sourceMappingURL=HomePage.css.map */

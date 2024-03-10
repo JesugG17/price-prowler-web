@@ -10,9 +10,9 @@ export const Header = () => {
   };
 
   return (
-    <header className=''>
-      <nav className=''>
-        <ul className=''>
+    <header>
+      <nav>
+        <ul>
           <li>Inicio</li>
           <li>Buscador</li>
           <li>Monitoreo</li>

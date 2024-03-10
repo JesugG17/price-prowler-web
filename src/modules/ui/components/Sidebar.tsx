@@ -9,7 +9,7 @@ export const Sidebar: FC<Props> = ({ isMobileMenuOpen, toggleMobileMenu }) => {
       )}
 
       <div
-        className={`w-3/4 h-full fixed top-0 left-0 z-20 shadow bg-white p-4 transition-all duration-200 flex flex-col justify-between ${
+        className={`w-3/4 h-full fixed top-0 left-0 z-20 shadow bg-black p-4 transition-all duration-200 flex flex-col justify-between ${
           isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
