@@ -27,12 +27,13 @@ ul {
   gap: $lengt-md2;
 
   li {
-    border-bottom: 2px transparent;
+    border-bottom: 2px solid transparent;
     transition: border-bottom-color 0.3s ease-out;
+    cursor: pointer;
 
     &:hover {
       color: $light-blue;
-      border-bottom: 2px solid $light-blue;
+      border-color: $light-blue;
     }
   }
 }
