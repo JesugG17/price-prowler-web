@@ -1,61 +1,60 @@
 @import '../../../../global.scss';
 
-.container-homepage{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    width: 100vw;
+.container-homepage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  width: 100vw;
 
-    p{
-        color: lighten($color: $black, $amount: 10);
-        font-size: $text-xl;
-        text-align: center;
+  p {
+    color: lighten($color: $black, $amount: 10);
+    font-size: $text-xl;
+    text-align: center;
+  }
+
+  img {
+    width: 10rem;
+  }
+
+  //'bg-black rounded text-white py-1 px-4 shadow-lg hover:brightness-110 transition-all duration-200
+  a {
+    background-color: $light-blue;
+    color: $white;
+    border-radius: 2rem;
+    padding: $lengt-sm2 $lengt-lg1;
+    box-shadow: 0px 0.25rem 0.25rem lighten($light-blue, 20);
+
+    transition: opacity 200ms linear;
+    &:hover {
+      opacity: 90%;
     }
-
-    img{
-        width: 10rem;
-    }
-
-    //'bg-black rounded text-white py-1 px-4 shadow-lg hover:brightness-110 transition-all duration-200
-    a{
-        background-color: $light-blue;
-        color: $white;
-        border-radius: 2rem;
-        padding: $lengt-sm2 $lengt-lg1;
-        box-shadow: 0px 0.25rem 0.25rem lighten($light-blue, 20);
-
-        transition: opacity 200ms linear;
-        &:hover{
-            opacity: 90%;
-        }
-    }
+  }
 }
 
 //'bg-slate-200 w-40 h-40 -z-10 opacity-30 rounded-full absolute -top-12 -right-12
-@mixin bg-circle($top:auto, $right:auto, $bottom:auto, $left:auto){
-    background-color: #e2e8f0;
-    border: 1px solid darken($color: #e2e8f0, $amount: 20);
-    border-radius: 50%;
-    height: 10rem;
-    opacity: 30%;
-    width: 10rem;
+@mixin bg-circle($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  background-color: #e2e8f0;
+  border: 1px solid darken($color: #e2e8f0, $amount: 20);
+  border-radius: 50%;
+  height: 10rem;
+  opacity: 30%;
+  width: 10rem;
 
-    position: absolute;
-    top: $top;
-    right: $right;
-    bottom: $bottom;
-    left: $left;
-    z-index: -10;
-
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: -10;
 }
 
-.bg-circle-top{
-    @include bg-circle(-3rem, -3rem)
+.bg-circle-top {
+  @include bg-circle(-3rem, -3rem);
 }
-.bg-circle-bottom{
-    @include bg-circle(null, null, -3rem, -2rem)
+.bg-circle-bottom {
+  @include bg-circle(null, null, -3rem, -2rem);
 }
 //'bg-slate-200 w-40 h-40 opacity-30 rounded-full absolute -bottom-12 -left-12

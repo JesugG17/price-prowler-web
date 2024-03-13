@@ -1,8 +1,8 @@
 //Colors
-$black: #1F1F1F;
-$light-blue: #6173FF;
-$dark-grayish-blue: #4C545D;
-$white: #FFF;
+$black: #1f1f1f;
+$light-blue: #6173ff;
+$dark-grayish-blue: #4c545d;
+$white: #fff;
 $text-xl: 2rem;
 
 //lengths
@@ -16,15 +16,14 @@ $lengt-lg1: 2rem;
 $lengt-lg2: 3rem;
 $lengt-lg3: 4rem;
 
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

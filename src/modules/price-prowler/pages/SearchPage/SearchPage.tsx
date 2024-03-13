@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { TEST_PRODUCTS } from '@/common/constants/products';
 import { useProducts } from '../../../../common/context/price-prowler/ProductsAddedProvider';
-import './SearchPage.scss'
+import './SearchPage.scss';
 
 export const SearchPage = () => {
   const navigate = useNavigate();
@@ -20,19 +20,12 @@ export const SearchPage = () => {
           className='button-tracking'
         >
           <img src='/img/eye.png' alt='Hear icon' />
-          {products.length !== 0 && (
-            <div className='circle-tracking'>
-              {products.length}
-            </div>
-          )}
+          {products.length !== 0 && <div className='circle-tracking'>{products.length}</div>}
         </div>
       </div>
       <div>
         <form className='search-container'>
-          <input
-            type='text'
-            placeholder='Search a product'
-          />
+          <input type='text' placeholder='Search a product' />
           <img src='/img/search.png' alt='search icon' />
         </form>
       </div>

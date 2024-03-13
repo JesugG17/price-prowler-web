@@ -1,58 +1,58 @@
 @import '../../../../global.scss';
 
-header{
-    font: {
-        size: 1rem;
-        weight: 500;
-    };
-    background-color: whitesmoke;
-    border-bottom: 1px solid darken($color: whitesmoke, $amount: 5);
-    padding: $lengt-md3 $lengt-lg2;
-    width: 100vw;
+header {
+  font: {
+    size: 1rem;
+    weight: 500;
+  }
+  background-color: whitesmoke;
+  border-bottom: 1px solid darken($color: whitesmoke, $amount: 5);
+  padding: $lengt-md3 $lengt-lg2;
+  width: 100vw;
 }
 
-nav{
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: $lengt-lg1;
+  div {
     display: flex;
-    justify-content: space-between;
-    height: $lengt-lg1;
-    div{
-        display: flex;
-        gap: $lengt-md2;
-    }
-}
-
-ul{
-    display: flex;
-    align-items: center;
     gap: $lengt-md2;
-
-    li{
-        border-bottom: 2px transparent;
-        transition: border-bottom-color 0.3s ease-out;
-
-        &:hover{
-            color: $light-blue;
-            border-bottom: 2px solid $light-blue;
-        }
-    }
+  }
 }
 
-.container-nav-button{
-    button{
-        align-items: center;
-        display: flex;
-        border: 1px solid gainsboro {
-            radius: 0.5rem;
-        };
-        padding: $lengt-sm2;
+ul {
+  display: flex;
+  align-items: center;
+  gap: $lengt-md2;
 
-        transition: background-color 0.3s ease-out;
-        transition: border-color 0.3s ease-out;
-        &:hover{
-            color: lighten($color: $light-blue, $amount: 3);
-            background-color: lighten($color: whitesmoke, $amount: 10);
-            border: 1px solid darken($color: whitesmoke, $amount: 30);
-            box-shadow: 0px 0.25rem 0.25rem lighten(whitesmoke, 20);
-        }
+  li {
+    border-bottom: 2px transparent;
+    transition: border-bottom-color 0.3s ease-out;
+
+    &:hover {
+      color: $light-blue;
+      border-bottom: 2px solid $light-blue;
     }
+  }
+}
+
+.container-nav-button {
+  button {
+    align-items: center;
+    display: flex;
+    border: 1px solid gainsboro {
+      radius: 0.5rem;
+    }
+    padding: $lengt-sm2;
+
+    transition: background-color 0.3s ease-out;
+    transition: border-color 0.3s ease-out;
+    &:hover {
+      color: lighten($color: $light-blue, $amount: 3);
+      background-color: lighten($color: whitesmoke, $amount: 10);
+      border: 1px solid darken($color: whitesmoke, $amount: 30);
+      box-shadow: 0px 0.25rem 0.25rem lighten(whitesmoke, 20);
+    }
+  }
 }

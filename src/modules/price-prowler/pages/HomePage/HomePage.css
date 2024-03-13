@@ -22,8 +22,8 @@
   width: 10rem;
 }
 .container-homepage a {
-  background-color: #6173FF;
-  color: #F4F4F4;
+  background-color: #6173ff;
+  color: #f4f4f4;
   border-radius: 2rem;
   padding: 0.5rem 2rem;
   box-shadow: 0px 0.25rem 0.25rem #c7cdff;
@@ -59,4 +59,4 @@
   bottom: -3rem;
   left: -2rem;
   z-index: -10;
-}/*# sourceMappingURL=HomePage.css.map */
+} /*# sourceMappingURL=HomePage.css.map */

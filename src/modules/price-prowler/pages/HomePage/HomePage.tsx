@@ -9,10 +9,7 @@ export const HomePage = () => {
         <strong>CLICK</strong>
       </p>
       <img src='/img/homepage.jpg' alt='' />
-      <Link
-        to='/search'
-        className=''
-      >
+      <Link to='/search' className=''>
         Comenzar
       </Link>
       <div className='bg-circle-top'></div>

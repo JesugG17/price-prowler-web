@@ -33,8 +33,8 @@ ul li {
   transition: border-bottom-color 0.3s ease-out;
 }
 ul li:hover {
-  color: #6173FF;
-  border-bottom: 2px solid #6173FF;
+  color: #6173ff;
+  border-bottom: 2px solid #6173ff;
 }
 
 .container-nav-button button {
@@ -51,4 +51,4 @@ ul li:hover {
   background-color: white;
   border: 1px solid darkgray;
   box-shadow: 0px 0.25rem 0.25rem white;
-}/*# sourceMappingURL=Header.css.map */
+} /*# sourceMappingURL=Header.css.map */

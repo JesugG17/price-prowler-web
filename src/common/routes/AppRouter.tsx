@@ -4,7 +4,6 @@ import { TrackingPage } from '../../modules/price-prowler/pages/TrackingPage/Tra
 import { SearchPage } from '@/modules/price-prowler/pages/SearchPage/SearchPage';
 import { Header } from '../../modules/ui/components/Header/Header';
 
-
 export const AppRouter = () => {
   return (
     <>

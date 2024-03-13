@@ -31,10 +31,7 @@ export const ProductCard: FC<Props> = ({ product, removeProduct, addProduct }) =
       </div>
 
       <div className='container-actions-tracking'>
-        <a
-          href={product.link}
-          target='_blank'
-        >
+        <a href={product.link} target='_blank'>
           <img src='/img/icon-web.svg' alt='' />
         </a>
         <button onClick={handleFav}>
