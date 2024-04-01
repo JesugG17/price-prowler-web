@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-//Colors
+// Colors
 $black: #1f1f1f;
 $light-blue: #6173ff;
 $dark-grayish-blue: #4c545d;
 $white: #fff;
 $text-xl: 2rem;
 
-//lengths
+// Lengths
 $lengt-sm1: 0.25rem;
 $lengt-sm2: 0.5rem;
 $lengt-sm3: 0.75rem;
@@ -18,8 +18,11 @@ $lengt-lg1: 2rem;
 $lengt-lg2: 3rem;
 $lengt-lg3: 4rem;
 
-// shadows
+// Shadows
 $container-shadow: -1px 11px 53px -19px rgb(0 0 0 / 75%);
+
+// Constants
+$header-height: 100px;
 
 * {
   box-sizing: border-box;

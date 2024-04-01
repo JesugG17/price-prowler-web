@@ -6,6 +6,7 @@ header {
     size: 1.3rem;
     weight: 500;
   }
+  height: $header-height;
   box-shadow: $container-shadow;
 }
 
@@ -14,18 +15,18 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: $lengt-md3 $lengt-lg2;
-}
 
-ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: $lengt-md3;
-}
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: $lengt-md3;
+  }
 
-img {
-  width: 45px;
-  filter: invert(1);
+  img {
+    width: 45px;
+    filter: invert(1);
+  }
 }
 
 a {

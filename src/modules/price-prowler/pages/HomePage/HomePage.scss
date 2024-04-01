@@ -6,54 +6,78 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  width: 100vw;
+  height: calc(100vh - $header-height);
+}
 
-  p {
-    color: lighten($color: $black, $amount: 10);
-    font-size: $text-xl;
-    text-align: center;
+img {
+  width: 30rem;
+}
+
+.main-paragraph {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.start-button {
+  padding: 1rem;
+  background-color: $light-blue;
+  color: $white;
+  border-radius: $lengt-sm2;
+  border: 1px solid $light-blue;
+  transition: 0.3s color ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $white;
+    color: $light-blue;
   }
-
-  img {
-    width: 10rem;
-  }
-
-  a {
-    background-color: $light-blue;
-    color: $white;
-    border-radius: 2rem;
-    padding: $lengt-sm2 $lengt-lg1;
-    box-shadow: 0px 0.25rem 0.25rem lighten($light-blue, 20);
-
-    transition: opacity 200ms linear;
-    &:hover {
-      opacity: 90%;
-    }
-  }
 }
 
-//'bg-slate-200 w-40 h-40 -z-10 opacity-30 rounded-full absolute -top-12 -right-12
-@mixin bg-circle($top: auto, $right: auto, $bottom: auto, $left: auto) {
-  background-color: #e2e8f0;
-  border: 1px solid darken($color: #e2e8f0, $amount: 20);
-  border-radius: 50%;
-  height: 10rem;
-  opacity: 30%;
-  width: 10rem;
+//   p {
+//     color: lighten($color: $black, $amount: 10);
+//     font-size: $text-xl;
+//     text-align: center;
+//   }
 
-  position: absolute;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-  z-index: -10;
-}
+//   img {
+//     width: 10rem;
+//   }
 
-.bg-circle-top {
-  @include bg-circle(-3rem, -3rem);
-}
-.bg-circle-bottom {
-  @include bg-circle(null, null, -3rem, -2rem);
-}
+//   a {
+//     background-color: $light-blue;
+//     color: $white;
+//     border-radius: 2rem;
+//     padding: $lengt-sm2 $lengt-lg1;
+//     box-shadow: 0px 0.25rem 0.25rem lighten($light-blue, 20);
+
+//     transition: opacity 200ms linear;
+//     &:hover {
+//       opacity: 90%;
+//     }
+//   }
+// }
+
+// //'bg-slate-200 w-40 h-40 -z-10 opacity-30 rounded-full absolute -top-12 -right-12
+// @mixin bg-circle($top: auto, $right: auto, $bottom: auto, $left: auto) {
+//   background-color: #e2e8f0;
+//   border: 1px solid darken($color: #e2e8f0, $amount: 20);
+//   border-radius: 50%;
+//   height: 10rem;
+//   opacity: 30%;
+//   width: 10rem;
+
+//   position: absolute;
+//   top: $top;
+//   right: $right;
+//   bottom: $bottom;
+//   left: $left;
+//   z-index: -10;
+// }
+
+// .bg-circle-top {
+//   @include bg-circle(-3rem, -3rem);
+// }
+// .bg-circle-bottom {
+//   @include bg-circle(null, null, -3rem, -2rem);
+// }
 //'bg-slate-200 w-40 h-40 opacity-30 rounded-full absolute -bottom-12 -left-12

@@ -21,7 +21,6 @@ export const Header = () => {
               <Link to='/tracking'>Monitoreo</Link>
             </li>
           </ul>
-          {/* <img onClick={toggleMobileMenu} className='md:hidden' src='/img/menu-icon.png' alt='' /> */}
           <div className='auth-buttons-container'>
             <button>Iniciar sesion</button>
             <button>Registrarse</button>
