@@ -24,6 +24,7 @@ nav {
 ul {
   display: flex;
   align-items: center;
+  list-style: none;
   gap: $lengt-md2;
 
   li {
@@ -36,6 +37,10 @@ ul {
       border-color: $light-blue;
     }
   }
+}
+
+a {
+  text-decoration: none;
 }
 
 .container-nav-button {
