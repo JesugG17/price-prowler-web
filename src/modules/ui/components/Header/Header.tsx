@@ -9,6 +9,9 @@ export const Header = () => {
         <nav>
           <ul>
             <li>
+              <img src='/img/logo-priceprowler.svg' />
+            </li>
+            <li>
               <Link to='/'>Inicio</Link>
             </li>
             <li>
@@ -19,7 +22,7 @@ export const Header = () => {
             </li>
           </ul>
           {/* <img onClick={toggleMobileMenu} className='md:hidden' src='/img/menu-icon.png' alt='' /> */}
-          <div className='container-nav-button'>
+          <div className='auth-buttons-container'>
             <button>Iniciar sesion</button>
             <button>Registrarse</button>
           </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 //Colors
 $black: #1f1f1f;
 $light-blue: #6173ff;
@@ -16,10 +18,17 @@ $lengt-lg1: 2rem;
 $lengt-lg2: 3rem;
 $lengt-lg3: 4rem;
 
+// shadows
+$container-shadow: -1px 11px 53px -19px rgb(0 0 0 / 75%);
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
 }
 
 @mixin flex-center {

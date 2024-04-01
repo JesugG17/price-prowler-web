@@ -1,64 +1,54 @@
 @import '../../../../global.scss';
 
 header {
+  background-color: $light-blue;
   font: {
-    size: 1rem;
+    size: 1.3rem;
     weight: 500;
   }
-  background-color: whitesmoke;
-  border-bottom: 1px solid darken($color: whitesmoke, $amount: 5);
-  padding: $lengt-md3 $lengt-lg2;
-  width: 100vw;
+  box-shadow: $container-shadow;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  height: $lengt-lg1;
-  div {
-    display: flex;
-    gap: $lengt-md2;
-  }
+  align-items: center;
+  padding: $lengt-md3 $lengt-lg2;
 }
 
 ul {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: $lengt-md2;
+  gap: $lengt-md3;
+}
 
-  li {
-    border-bottom: 2px solid transparent;
-    transition: border-bottom-color 0.3s ease-out;
-    cursor: pointer;
-
-    &:hover {
-      color: $light-blue;
-      border-color: $light-blue;
-    }
-  }
+img {
+  width: 45px;
+  filter: invert(1);
 }
 
 a {
-  text-decoration: none;
+  color: white;
 }
 
-.container-nav-button {
-  button {
-    align-items: center;
-    display: flex;
-    border: 1px solid gainsboro {
-      radius: 0.5rem;
-    }
-    padding: $lengt-sm2;
+.auth-buttons-container {
+  display: flex;
+  gap: $lengt-sm3;
 
-    transition: background-color 0.3s ease-out;
-    transition: border-color 0.3s ease-out;
+  button {
+    padding: $lengt-sm3;
+    border: none;
+    border-radius: $lengt-sm1;
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+    transition: 0.3s all ease-in-out;
+    cursor: pointer;
+
     &:hover {
-      color: lighten($color: $light-blue, $amount: 3);
-      background-color: lighten($color: whitesmoke, $amount: 10);
-      border: 1px solid darken($color: whitesmoke, $amount: 30);
-      box-shadow: 0px 0.25rem 0.25rem lighten(whitesmoke, 20);
+      background-color: $white;
+      color: $light-blue;
     }
   }
 }
