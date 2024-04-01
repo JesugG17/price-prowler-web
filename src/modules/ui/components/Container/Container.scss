@@ -1,6 +1,27 @@
 @import '../../../../global.scss';
 
 .container {
-  max-width: 1360px;
+  width: 1360px;
   margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  @include flex-center;
+}
+
+.center-main {
+  justify-content: center;
+}
+
+.center-cross {
+  align-items: center;
 }
