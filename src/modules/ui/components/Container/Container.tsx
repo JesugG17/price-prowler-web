@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
+import './Container.scss';
 
 export const Container: FC<Props> = ({ children }) => {
   return <div className='container'>{children}</div>;
