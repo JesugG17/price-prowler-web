@@ -24,38 +24,16 @@ img {
   color: $white;
   border-radius: $lengt-sm2;
   border: 1px solid $light-blue;
-  transition: 0.3s color ease-in-out;
+  transition: 0.6s all;
   cursor: pointer;
+  font-size: large;
 
   &:hover {
     background-color: $white;
     color: $light-blue;
+    transform: translateY(30);
   }
 }
-
-//   p {
-//     color: lighten($color: $black, $amount: 10);
-//     font-size: $text-xl;
-//     text-align: center;
-//   }
-
-//   img {
-//     width: 10rem;
-//   }
-
-//   a {
-//     background-color: $light-blue;
-//     color: $white;
-//     border-radius: 2rem;
-//     padding: $lengt-sm2 $lengt-lg1;
-//     box-shadow: 0px 0.25rem 0.25rem lighten($light-blue, 20);
-
-//     transition: opacity 200ms linear;
-//     &:hover {
-//       opacity: 90%;
-//     }
-//   }
-// }
 
 // //'bg-slate-200 w-40 h-40 -z-10 opacity-30 rounded-full absolute -top-12 -right-12
 // @mixin bg-circle($top: auto, $right: auto, $bottom: auto, $left: auto) {
