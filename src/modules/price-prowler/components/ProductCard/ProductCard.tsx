@@ -23,7 +23,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
       </div>
       <div className='accesibility-container'>
         <a href={product.link} target='_blank' className='product-link'>
-          Visit
+          Visitar
         </a>
         <img src='/img/heart.png' alt='Heart icon' />
       </div>
