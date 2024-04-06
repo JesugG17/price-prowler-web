@@ -2,18 +2,10 @@ import { Product } from '@/common/types/products.interface';
 import { FC, useState } from 'react';
 import './ProductCard.scss';
 
-export const ProductCard: FC<Props> = ({ product, removeProduct, addProduct }) => {
+export const ProductCard: FC<Props> = ({ product }) => {
   const [isAddedToFavs, setIsAddedToFavs] = useState(false);
 
   const handleFav = () => {
-    if (isAddedToFavs) {
-      removeProduct(product.id);
-    }
-
-    if (!isAddedToFavs) {
-      addProduct(product);
-    }
-
     setIsAddedToFavs((prevState) => !prevState);
   };
 
@@ -48,6 +40,4 @@ export const ProductCard: FC<Props> = ({ product, removeProduct, addProduct }) =
 
 type Props = {
   product: Product;
-  addProduct: (product: Product) => void;
-  removeProduct: (productId: string) => void;
 };
