@@ -21,9 +21,15 @@ export const Header = () => {
               <Link to='/tracking'>Monitoreo</Link>
             </li>
           </ul>
-          <div className='auth-buttons-container'>
-            <button>Iniciar sesion</button>
-            <button>Registrarse</button>
+          <div className='buttons-container'>
+            <div className='language-buttons-container'>
+              <button>English</button>
+              <button>Spanish</button>
+            </div>
+            <div className='auth-buttons-container'>
+              <button>Iniciar sesion</button>
+              <button>Registrarse</button>
+            </div>
           </div>
         </nav>
       </Container>
