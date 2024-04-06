@@ -1,8 +1,11 @@
+import { useNavigate } from 'react-router';
 import { Container } from '@/modules/ui/components/Container/Container';
 
 import './HomePage.scss';
 
 export const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
     <section className='container-homepage'>
       <Container flexColumn centerCross>
@@ -11,7 +14,9 @@ export const HomePage = () => {
           <strong>CLICK</strong>
         </p>
         <img src='/img/homepage.jpg' />
-        <button className='start-button'>¡Empieza a buscar!</button>
+        <button onClick={() => navigate('/search')} className='start-button'>
+          ¡Empieza a buscar!
+        </button>
       </Container>
     </section>
   );
