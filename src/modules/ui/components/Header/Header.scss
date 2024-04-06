@@ -8,13 +8,13 @@ header {
   }
   height: $header-height;
   box-shadow: $container-shadow;
+  padding: $lengt-md3 0;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $lengt-md3 $lengt-lg2;
 
   ul {
     display: flex;
@@ -32,11 +32,6 @@ nav {
 a {
   color: white;
   text-decoration: none;
-  // border-bottom: 1px solid transparent;
-
-  // &:hover {
-  //   border-bottom: 1px solid $white;
-  // }
 
   &::after {
     content: '';
@@ -50,6 +45,24 @@ a {
 
   &:hover:after {
     transform: scaleX(1);
+  }
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.language-buttons-container {
+  display: flex;
+  gap: $lengt-sm3;
+
+  // TODO
+  button {
+    background-color: transparent;
+    border: none;
+    color: $white;
   }
 }
 
