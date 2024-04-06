@@ -34,6 +34,10 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 @mixin flex-center {
   display: flex;
   justify-content: center;

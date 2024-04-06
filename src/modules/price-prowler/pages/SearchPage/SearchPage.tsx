@@ -19,7 +19,6 @@ export const SearchPage = () => {
     const formattedProductName = splittedProductName.join('-');
 
     const { data } = await api.get(`/search/products/${formattedProductName}`);
-    const [firstItem] = data.data;
 
     setProducts(data.data);
   };
@@ -49,8 +48,8 @@ export const SearchPage = () => {
             </div>
           </form>
         </div>
-        <ul>
-          { products.length === 0 && <NoProductsFound /> }
+        <ul className='list-product-card'>
+          {products.length === 0 && <NoProductsFound />}
           {products.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}

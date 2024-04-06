@@ -1,38 +1,31 @@
 import { Product } from '@/common/types/products.interface';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import './ProductCard.scss';
 
 export const ProductCard: FC<Props> = ({ product }) => {
-  const [isAddedToFavs, setIsAddedToFavs] = useState(false);
-
-  const handleFav = () => {
-    setIsAddedToFavs((prevState) => !prevState);
-  };
-
   return (
     <li className='item-product'>
-      <img className='product-img' src={product.img} alt='Product image' />
-      <div className='product-info'>
-        <h4>
-          <strong>{product.name}</strong>
-        </h4>
-        <p className='product-info-store'>Store</p>
-        <p>
-          <strong>${product.price}</strong>
-        </p>
+      <div className='product-info-container'>
+        <figure className='item-img-container'>
+          <img src={product.img} alt='Product image' />
+        </figure>
+        <div className='product-info'>
+          <h4>{product.name}</h4>
+          <div className='product-price-container'>
+            <p>
+              <strong>${product.price}</strong>
+            </p>
+            <p>
+              <span>Vendido por mercado libre</span>
+            </p>
+          </div>
+        </div>
       </div>
-
-      <div className='container-actions-tracking'>
-        <a href={product.link} target='_blank'>
-          <img src='/img/icon-web.svg' alt='' />
+      <div className='accesibility-container'>
+        <a href={product.link} target='_blank' className='product-link'>
+          Visit
         </a>
-        <button onClick={handleFav}>
-          {isAddedToFavs ? (
-            <img src='/img/red-heart.png' alt='' />
-          ) : (
-            <img src='/img/heart.png' alt='' />
-          )}
-        </button>
+        <img src='/img/heart.png' alt='Heart icon' />
       </div>
     </li>
   );

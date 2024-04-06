@@ -12,13 +12,19 @@ export const Header = () => {
               <img src='/img/logo-priceprowler.svg' />
             </li>
             <li>
-              <Link to='/'>Inicio</Link>
+              <Link className='header-links' to='/'>
+                Inicio
+              </Link>
             </li>
             <li>
-              <Link to='/search'>Buscador</Link>
+              <Link className='header-links' to='/search'>
+                Buscador
+              </Link>
             </li>
             <li>
-              <Link to='/tracking'>Monitoreo</Link>
+              <Link className='header-links' to='/tracking'>
+                Monitoreo
+              </Link>
             </li>
           </ul>
           <div className='buttons-container'>
