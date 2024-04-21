@@ -39,6 +39,7 @@ export const SearchPage = () => {
             <div className='form-input-container'>
               <input
                 disabled={isLoading}
+                value={formState}
                 onChange={(event) => setFormState(event.target.value)}
                 placeholder='Busca tus productos aqui'
               />
