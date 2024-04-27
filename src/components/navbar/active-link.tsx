@@ -12,8 +12,8 @@ export const ActiveLink: FC<Props> = ({ path, text }) => {
   return (
     <li
       className={twJoin(
-        "py-4 border-b-2 transition-all duration-200",
-        isActive && "border-b-blue-500"
+        "py-6 border-b-2 transition-all duration-200 hover:border-b-gray-500",
+        isActive ? "border-b-blue-500" : "border-b-transparent"
       )}
       key={path}
     >
