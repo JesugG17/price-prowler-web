@@ -1,18 +1,18 @@
-import Image from "next/image";
-import { Container } from "../container";
-import { ActiveLink } from "./active-link";
-import Link from "next/link";
-import { FormSearch } from "./form-search";
+import Image from 'next/image';
+import { Container } from '../container';
+import { ActiveLink } from './active-link';
+import Link from 'next/link';
+import { FormSearch } from './form-search';
 
 const navOptions = [
-  { text: "Inicio", path: "/" },
-  { text: "Buscador", path: "/search" },
-  { text: "Monitoreo", path: "/tracking" },
+  { text: 'Inicio', path: '/' },
+  // { text: "Buscador", path: "/search" },
+  { text: 'Monitoreo', path: '/tracking' },
 ];
 
 export const Navbar = () => {
   return (
-    <header className="shadow-lg fixed w-full bg-white">
+    <header className="shadow-lg fixed w-full bg-white z-10">
       <Container className="flex justify-between">
         <nav className="flex items-center gap-5">
           <Link href="/">
@@ -25,7 +25,10 @@ export const Navbar = () => {
           </Link>
           <ul className="flex gap-7">
             {navOptions.map((navOption) => (
-              <ActiveLink key={navOption.path} {...navOption} />
+              <ActiveLink
+                key={navOption.path}
+                {...navOption}
+              />
             ))}
           </ul>
         </nav>

@@ -1,18 +1,19 @@
-"use client";
-import { useState } from "react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+'use client';
+import { useState } from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export const FormSearch = () => {
-  const [formState, setFormState] = useState("");
+  const [formState, setFormState] = useState('');
   const router = useRouter();
 
   const onSearch = (event: React.FormEvent) => {
     event.preventDefault();
-    const splittedFormState = formState.split(" ");
-    const formattedFormState = splittedFormState.join("-");
+    const splittedFormState = formState.split(' ');
+    const formattedFormState = splittedFormState.join('-');
 
-    router.push(`/search?q=${formattedFormState}`);
+    setFormState('');
+    router.push(`/search/${formattedFormState}`);
   };
 
   return (

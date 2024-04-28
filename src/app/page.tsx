@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -13,12 +12,7 @@ export default function Home() {
         width={350}
         height={350}
       />
-      <Link
-        href="/search"
-        className="p-3 bg-violet-500 text-white rounded-md hover:brightness-110 transition-all duration-200"
-      >
-        Empezar a buscar
-      </Link>
+      <button className="p-3 bg-violet-500 text-white rounded-md hover:brightness-110 transition-all duration-200">Empezar a buscar</button>
     </section>
   );
 }
