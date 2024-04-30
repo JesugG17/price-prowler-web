@@ -12,7 +12,7 @@ const navOptions = [
 
 export const Navbar = () => {
   return (
-    <header className="shadow-lg fixed w-full bg-white z-10">
+    <header className="shadow-lg w-full bg-white z-10">
       <Container className="flex justify-between">
         <nav className="flex items-center gap-5">
           <Link href="/">

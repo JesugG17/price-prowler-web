@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Home() {
   return (
-    <section className="h-screen flex-col-center">
+    <section className="mt-10 flex-col-center">
       <h4 className="text-4xl text-center">
         Busca tus productos en un solo <br /> <strong>CLICK</strong>
       </h4>

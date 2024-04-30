@@ -1,6 +1,6 @@
-import { Product } from '@/interfaces/product.interface';
 import React, { FC } from 'react';
-import { ProductCard } from '../product-card';
+import { Product } from '@/interfaces/product.interface';
+import { ProductCard } from './product-card';
 import { Container } from '../container';
 
 export const ProductsList: FC<Props> = ({ products }) => {

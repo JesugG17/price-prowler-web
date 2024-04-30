@@ -13,8 +13,7 @@ export default async function Search({ params }: Props) {
   const products = await getProducts(params.product);
   return (
     <Suspense fallback={<Loading />}>
-      <div>
-        <h1>Search page</h1>
+      <div className="mt-2">
         <ProductsList products={products} />
       </div>
     </Suspense>
