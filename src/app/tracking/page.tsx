@@ -1,4 +1,4 @@
-export default function Tracking() {
+export default function TrackingPage() {
   return (
     <div>
       <h1>Tracking page</h1>

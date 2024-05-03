@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import Loading from './loading';
 
 const getProducts = async (productName: string): Promise<Product[]> => {
-  const resp = await fetch(`http://localhost:3002/api/search/products/${productName}`);
+  const resp = await fetch(`http://localhost:3002/api/search/products/${productName}`, { cache: 'no-store' });
   const { data: products } = await resp.json();
   return products;
 };

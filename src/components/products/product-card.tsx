@@ -7,21 +7,19 @@ const DEFAULT_IMG = '/img/default-product.webp';
 
 export const ProductCard: FC<Props> = ({ product }) => {
   const { name, link, price, img, shop } = product;
-
-  const formattedName = name.substring(0, 30) + '...';
-  const isBase64Image = img.includes('base64');
-
+  const formattedName = name.length > 50 ? name.substring(0, 50) + '...' : name;
+  console.log(img);
   return (
     <li className="h-full">
       <div className="relative h-full flex w-96 flex-col justify-between rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
         <div>
-          <div className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
+          <div className="relative mx-4 mt-4 h-96 overflow-hidden flex justify-center rounded-xl bg-white bg-clip-border text-gray-700">
             <Image
-              src={isBase64Image ? DEFAULT_IMG : img}
+              src={img}
               alt={`${name} image`}
               width={200}
               height={200}
-              className="h-full w-full object-cover"
+              className="object-contain"
             />
           </div>
           <div className="p-6 flex flex-col gap-2">
@@ -33,7 +31,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
                 href={link}
                 target="_blank"
               >
-                Visit product
+                Visitar producto
               </Link>
               <p>
                 Vendido por: <strong>{shop}</strong>
