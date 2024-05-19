@@ -32,7 +32,7 @@ export const SearchPage = () => {
   return (
     <section>
       <Container flexColumn>
-        <h1>Search page</h1>
+        {/* <h1>Search page</h1>
         <div>
           <form onSubmit={onSearch}>
             <div className=''>
@@ -58,11 +58,10 @@ export const SearchPage = () => {
         <ul>
           {isLoading &&
             [...Array(9).fill(null)].map((_, index) => <SkeletonProductCard key={index} />)}
-          {/* {products.length === 0 && <NoProductsFound />} */}
           {products.map((product, index) => (
             <ProductCard key={index} product={product} />
           ))}
-        </ul>
+        </ul> */}
       </Container>
     </section>
   );

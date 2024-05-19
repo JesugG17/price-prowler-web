@@ -1,21 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Container } from '../Container/Container';
-// import './Header.scss';
 import { ActiveLink } from './ActiveLink';
 import { useAuthStore } from '@/store/auth/useAuthStore';
 
 const paths = [
-  { path: '/', text: 'Inicio' },
-  { path: '/search', text: 'Buscador' },
-  { path: '/tracking', text: 'Monitorear' },
+  { path: '/', text: 'Inicio', needAuth: false },
+  { path: '/search', text: 'Buscador', needAuth: false },
+  { path: '/tracking', text: 'Monitorear', needAuth: true },
 ];
 
 export const Header = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   const user = useAuthStore((state) => state.user);
   const logout = useAuthStore((state) => state.logout);
-
-  console.log(user);
 
   return (
     <header className='bg-dark-primary shadow-md'>

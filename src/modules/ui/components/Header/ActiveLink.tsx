@@ -1,9 +1,17 @@
+import { useAuthStore } from '@/store/auth/useAuthStore';
 import classNames from 'classnames';
 import { FC } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-export const ActiveLink: FC<Props> = ({ path, text }) => {
+export const ActiveLink: FC<Props> = ({ path, text, needAuth }) => {
   const location = useLocation();
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+
+  const showLink = !needAuth || (needAuth && isAuthenticated);
+
+  if (!showLink) {
+    return null;
+  }
 
   const isActive = location.pathname === path;
 
@@ -27,4 +35,5 @@ export const ActiveLink: FC<Props> = ({ path, text }) => {
 type Props = {
   path: string;
   text: string;
+  needAuth: boolean;
 };
