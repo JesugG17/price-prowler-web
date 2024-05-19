@@ -14,7 +14,10 @@ export const HomePage = () => {
           <strong>CLICK</strong>
         </p>
         <img src='/img/homepage.jpg' />
-        <button onClick={() => navigate('/search')} className='start-button'>
+        <button
+          onClick={() => navigate('/search')}
+          className='p-4 bg-primary rounded text-light-gray-custom border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300'
+        >
           ¡Empieza a buscar!
         </button>
       </Container>

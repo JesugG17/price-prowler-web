@@ -5,7 +5,16 @@ export default {
     fontFamily: {
       custom: ['Rubik', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'dark-primary': '#395886',
+        primary: '#638ECB',
+        'light-primary': '#8AAEE0',
+        'very-light-primary': '#B1C9EF',
+        'gray-custom': '#D5DEEF',
+        'light-gray-custom': '#F0F3FA',
+      },
+    },
   },
   plugins: [],
 };

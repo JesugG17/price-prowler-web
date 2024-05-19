@@ -12,7 +12,7 @@ export const Container: FC<Props> = ({
 }) => {
   return (
     <div
-      className={classNames('container', {
+      className={classNames('app-container', {
         center: center && 'center',
         'center-main': centerMain,
         'center-cross': centerCross,

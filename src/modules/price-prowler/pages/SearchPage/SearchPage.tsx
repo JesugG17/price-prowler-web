@@ -3,7 +3,6 @@ import { Container } from '@/modules/ui/components/Container/Container';
 import { Product } from '@/common/types/products.interface';
 import { api } from '@/common/services/api/api';
 
-import './SearchPage.scss';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { SkeletonProductCard } from '../../components/SkeletonProductCard/SkeletonProductCard';
 
@@ -31,12 +30,12 @@ export const SearchPage = () => {
   }, [products]);
 
   return (
-    <section className='search-container'>
+    <section>
       <Container flexColumn>
-        <h1 className='search-title'>Search page</h1>
+        <h1>Search page</h1>
         <div>
-          <form onSubmit={onSearch} className='search-form'>
-            <div className='form-input-container'>
+          <form onSubmit={onSearch}>
+            <div className=''>
               <input
                 disabled={isLoading}
                 onChange={(event) => setFormState(event.target.value)}
@@ -46,7 +45,7 @@ export const SearchPage = () => {
                 <img src='/img/search.png' alt='search icon' />
               </button>
             </div>
-            <div className='search-select-container'>
+            <div>
               <label>Mostrar los primeros: </label>
               <select>
                 {[10, 15, 20, 30].map((number) => (
@@ -56,7 +55,7 @@ export const SearchPage = () => {
             </div>
           </form>
         </div>
-        <ul className='list-product-card'>
+        <ul>
           {isLoading &&
             [...Array(9).fill(null)].map((_, index) => <SkeletonProductCard key={index} />)}
           {/* {products.length === 0 && <NoProductsFound />} */}
