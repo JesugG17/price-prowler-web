@@ -94,7 +94,7 @@ export const RegisterPage = () => {
 
   return (
     <AuthLayout>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-5 mt-5'>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-7 mt-5'>
         <div className='flex flex-col gap-2'>
           <label htmlFor='name'>Nombre completo</label>
           <input
@@ -156,17 +156,6 @@ export const RegisterPage = () => {
           ¡Inicia sesion!
         </Link>
       </p>
-      <div className='flex items-center my-4'>
-        <div className='flex-grow border-t border-gray-300'></div>
-        <span className='flex-shrink mx-4 text-gray-500'>O</span>
-        <div className='flex-grow border-t border-gray-300'></div>
-      </div>
-      <div className='flex justify-center'>
-        <button className='flex shadow-md w-full justify-center items-center gap-2 border-2 p-2 rounded-md'>
-          <img className='w-8' src='/img/google-icon.svg' />
-          Google
-        </button>
-      </div>
     </AuthLayout>
   );
 };
