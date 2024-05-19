@@ -125,7 +125,7 @@ export const LoginPage = () => {
       <p className='mt-5 text-right'>
         ¿No tienes cuenta?,{' '}
         <Link className='text-blue-500 underline' to='/auth/register'>
-          !Registrate¡
+          ¡Registrate!
         </Link>
       </p>
       <div className='flex items-center my-4'>

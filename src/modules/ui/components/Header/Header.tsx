@@ -13,6 +13,7 @@ const paths = [
 export const Header = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
   const userName = useAuthStore((state) => state.user);
+  const logout = useAuthStore((state) => state.logout);
 
   return (
     <header className='bg-dark-primary shadow-md'>
@@ -32,7 +33,15 @@ export const Header = () => {
           </ul>
           <div className='flex items-center gap-5 text-white'>
             {isAuthenticated ? (
-              <p>Bievenido, {userName}</p>
+              <div className='flex items-center gap-3'>
+                <p>Bievenido, {userName}</p>
+                <button
+                  onClick={logout}
+                  className='border-2 border-red-500 p-1 px-3 rounded hover:bg-red-500 transition-all duration-300'
+                >
+                  Logout
+                </button>
+              </div>
             ) : (
               <>
                 <Link

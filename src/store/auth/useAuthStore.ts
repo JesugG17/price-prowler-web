@@ -21,6 +21,7 @@ interface UserRegistration extends UserCredentials {
 interface Actions {
   login: (credentials: UserCredentials) => Promise<void>;
   register: (register: UserRegistration) => Promise<void>;
+  logout: () => void;
 }
 
 type Store = State & Actions;
@@ -62,6 +63,13 @@ export const useAuthStore = create<Store>()(
         }
 
         toast.success(data.message!);
+      },
+      logout: () => {
+        localStorage.clear();
+        set({
+          isAuthenticated: false,
+          user: ''
+        })
       }
     }),
     {

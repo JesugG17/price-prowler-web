@@ -147,7 +147,7 @@ export const RegisterPage = () => {
           disabled={isLoading}
           className='bg-dark-primary flex justify-center text-white p-3 rounded text-lg hover:brightness-110 duration-200 transition-all'
         >
-          {isLoading ? <Loading /> : 'Iniciar sesion'}
+          {isLoading ? <Loading /> : 'Registrarse'}
         </button>
       </form>
       <p className='mt-5 text-right'>
