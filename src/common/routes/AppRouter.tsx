@@ -1,19 +1,13 @@
 import { Routes, Route, Navigate } from 'react-router';
-import { HomePage } from '../../modules/price-prowler/pages/HomePage/HomePage';
-import { TrackingPage } from '../../modules/price-prowler/pages/TrackingPage/TrackingPage';
-import { SearchPage } from '@/modules/price-prowler/pages/SearchPage/SearchPage';
-import { Header } from '../../modules/ui/components/Header/Header';
+import { PriceProwerRouter } from './PriceProwerRouter';
+import { AuthRouter } from './AuthRouter';
 
 export const AppRouter = () => {
   return (
-    <>
-      <Header />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/search' element={<SearchPage />} />
-        <Route path='/tracking' element={<TrackingPage />} />
-        <Route path='/*' element={<Navigate to='/' />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path='/*' element={<PriceProwerRouter />} />
+      <Route path='/auth/*' element={<AuthRouter />} />
+      <Route path='/*' element={<Navigate to='/' />} />
+    </Routes>
   );
 };

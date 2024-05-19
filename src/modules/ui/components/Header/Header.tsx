@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Container } from '../Container/Container';
 // import './Header.scss';
 import { ActiveLink } from './ActiveLink';
@@ -20,18 +21,24 @@ export const Header = () => {
             <li>
               <ul className='flex items-center gap-5'>
                 {paths.map((item) => (
-                  <ActiveLink {...item} />
+                  <ActiveLink key={item.path} {...item} />
                 ))}
               </ul>
             </li>
           </ul>
           <div className='flex items-center gap-5 text-white'>
-            <button className='border-2 p-2 rounded hover:text-dark-primary hover:bg-white transition-all duration-200'>
+            <Link
+              to='/auth/login'
+              className='border-2 p-2 rounded hover:text-dark-primary hover:bg-white transition-all duration-200'
+            >
               Iniciar sesion
-            </button>
-            <button className='border-2 p-2 rounded hover:text-dark-primary hover:bg-white transition-all duration-200'>
+            </Link>
+            <Link
+              to='/auth/register'
+              className='border-2 p-2 rounded hover:text-dark-primary hover:bg-white transition-all duration-200'
+            >
               Registrarse
-            </button>
+            </Link>
           </div>
         </nav>
       </Container>
