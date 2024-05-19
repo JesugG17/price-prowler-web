@@ -5,6 +5,7 @@ import { create } from "zustand";
 
 interface State {
   isAuthenticated: boolean;
+  user: string;
 }
 
 interface UserCredentials {
@@ -12,15 +13,20 @@ interface UserCredentials {
   password: string;
 }
 
+interface UserRegistration extends UserCredentials {
+  name: string;
+}
+
 interface Actions {
   login: (credentials: UserCredentials) => Promise<void>;
-  register: (email: string, password: string) => Promise<void>;
+  register: (register: UserRegistration) => Promise<void>;
 }
 
 type Store = State & Actions;
 
-export const useAuthStore = create<Store>((set, get) => ({
+export const useAuthStore = create<Store>((set) => ({
   isAuthenticated: false,
+  user: '',
   login: async ({ email, password }) => {
     const { data } = await api.post<AuthResponse>('/auth/login', {
       email, password
@@ -34,10 +40,18 @@ export const useAuthStore = create<Store>((set, get) => ({
     localStorage.setItem('token', data.token!);
 
     set({
-      isAuthenticated: true
+      isAuthenticated: true,
+      user: data.data?.name as string
     });
   },
-  register: async (email: string, password: string) => {
+  register: async (registration: UserRegistration) => {
+    const { data } = await api.post<AuthResponse>('/auth/register', registration);
 
+    if (!data.ok) {
+      toast.error(data.message!);
+      throw new Error('Error');
+    }
+
+    toast.success(data.message!);
   }
 }));
