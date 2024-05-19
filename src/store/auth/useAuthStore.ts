@@ -1,12 +1,13 @@
 import { api } from "@/common/services/api/api";
-import { AuthResponse } from "@/common/types/auth-response";
+import { AuthResponse, GoogleResponse } from "@/common/types/auth-response";
+import { User } from "@/common/types/user.interface";
 import toast from "react-hot-toast";
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
 interface State {
   isAuthenticated: boolean;
-  user: string;
+  user: User | null;
 }
 
 interface UserCredentials {
@@ -21,6 +22,7 @@ interface UserRegistration extends UserCredentials {
 interface Actions {
   login: (credentials: UserCredentials) => Promise<void>;
   register: (register: UserRegistration) => Promise<void>;
+  googleSignIn: (code: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -30,7 +32,7 @@ export const useAuthStore = create<Store>()(
   persist(
     (set) => ({
       isAuthenticated: false,
-      user: '',
+      user: null,
       login: async ({ email, password }) => {
         const { data } = await api.post<AuthResponse>('/auth/login', {
           email, password
@@ -51,7 +53,7 @@ export const useAuthStore = create<Store>()(
 
         set({
           isAuthenticated: true,
-          user: data.data?.name as string
+          user: { name: data.data?.name as string }
         });
       },
       register: async (registration: UserRegistration) => {
@@ -64,11 +66,35 @@ export const useAuthStore = create<Store>()(
 
         toast.success(data.message!);
       },
+      googleSignIn: async (code: string) => {
+        const { data } = await api.post<GoogleResponse>('/auth/google', {
+          code
+        });
+
+        if (!data.ok) {
+          toast.error(data.message);
+          return;
+        }
+
+        toast.success(data.message);
+        const persitedData = {
+          token: data.token,
+          user: data.data.user.name,
+          isAuthenticated: true
+        };
+
+        localStorage.setItem('data', JSON.stringify(persitedData));
+
+        set({
+          isAuthenticated: true,
+          user: { name: data.data.user.name, photo: data.data.user.photo }
+        });
+      },
       logout: () => {
         localStorage.clear();
         set({
           isAuthenticated: false,
-          user: ''
+          user: null,
         })
       }
     }),

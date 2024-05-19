@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthLayout } from '../layout/AuthLayout';
+import { useGoogle } from '@/common/hooks/useGoogle';
 
 const INITIAL_STATE = {
   email: '',
@@ -18,6 +19,7 @@ export const LoginPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const login = useAuthStore((state) => state.login);
   const navigate = useNavigate();
+  const googleSignIn = useGoogle();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -134,7 +136,10 @@ export const LoginPage = () => {
         <div className='flex-grow border-t border-gray-300'></div>
       </div>
       <div className='flex justify-center'>
-        <button className='flex shadow-md w-full justify-center items-center gap-2 border-2 p-2 rounded-md'>
+        <button
+          onClick={() => googleSignIn()}
+          className='flex shadow-md w-full justify-center items-center gap-2 border-2 p-2 rounded-md'
+        >
           <img className='w-8' src='/img/google-icon.svg' />
           Google
         </button>
