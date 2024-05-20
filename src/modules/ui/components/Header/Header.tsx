@@ -15,7 +15,7 @@ export const Header = () => {
   const logout = useAuthStore((state) => state.logout);
 
   return (
-    <header className='bg-dark-primary shadow-md'>
+    <header className='bg-dark-primary shadow-md fixed w-full top-0 z-10'>
       <Container>
         <nav className='flex justify-between p-2'>
           <ul className='flex items-center gap-5'>

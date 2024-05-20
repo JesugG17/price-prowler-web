@@ -49,7 +49,7 @@ export const TrackingPage = () => {
 
   return (
     <Container>
-      <div className='w-full bg-white rounded shadow min-h-70 border-2 mt-10 relative'>
+      <div className='w-full bg-white rounded shadow min-h-70 border-2 mt-[100px] relative'>
         <div className='grid grid-cols-2'>
           <div
             onClick={() => handleTab(TABS.FIRST)}
@@ -63,11 +63,11 @@ export const TrackingPage = () => {
           <div
             onClick={() => handleTab(TABS.SECOND)}
             className={classNames(
-              'text-center p-2 border-b-2 rounded border-r-2 hover:brightness-90 transition-all duration-300 cursor-pointer',
+              'text-center p-2 border-b-2 rounded border-r-2 pointer-events-none brightness-50 hover:brightness-90 transition-all duration-300 cursor-pointer',
               selectedtab === TABS.SECOND ? 'bg-primary text-white' : 'bg-white'
             )}
           >
-            Historico
+            Historico (NO DISPONIBLE)
           </div>
         </div>
         {products.length === 0 && (

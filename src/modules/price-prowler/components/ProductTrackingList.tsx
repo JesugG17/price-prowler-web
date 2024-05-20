@@ -39,7 +39,10 @@ export const ProductTrackingList: FC<Props> = ({ products, orderBy, remove }) =>
             key={product.id}
           >
             <figure className='flex justify-center'>
-              <img className='rounded h-32 w-32 object-contain' src={product.img} />
+              <img
+                className='rounded h-32 w-32 object-contain'
+                src={product.img.includes('localhost') ? '/img/default-image.webp' : product.img}
+              />
             </figure>
             <div className='flex flex-col gap-4 p-2'>
               <h4>{product.name}</h4>

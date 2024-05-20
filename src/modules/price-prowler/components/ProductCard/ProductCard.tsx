@@ -19,8 +19,6 @@ export const ProductCard: FC<Props> = ({ product, openModal, tracks }) => {
 
     const newIsProductAdded = tracksLink.includes(product.link.split('?')[0]);
 
-    console.log(product.link.split('?')[0]);
-
     const track = tracks.find(
       (track) => track.link.split('?')[0] === product.link.split('?')[0]
     ) as TrackingProduct;
@@ -75,11 +73,13 @@ export const ProductCard: FC<Props> = ({ product, openModal, tracks }) => {
     checkIfIsProductAdded();
   }, []);
 
+  const productImg = product.img.includes('localhost') ? '/img/default-image.webp' : product.img;
+
   return (
     <li className='item-product border-2'>
       <div className='product-info-container'>
         <figure className='item-img-container'>
-          <img src={product.img} alt='Product image' />
+          <img src={productImg} alt='Product image' />
         </figure>
         <div className='product-info'>
           <h4>{slicedProductName}</h4>

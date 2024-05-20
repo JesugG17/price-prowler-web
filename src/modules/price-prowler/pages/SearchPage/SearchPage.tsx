@@ -44,7 +44,7 @@ export const SearchPage = () => {
   }, []);
 
   return (
-    <section>
+    <section className='mt-16'>
       <Container flexColumn>
         <form onSubmit={onSearch}>
           <div className='flex justify-between items-center w-full border-2 mt-10 rounded'>
