@@ -1,3 +1,5 @@
 export const Loading = () => {
-  return <img className='w-8 animate-spin invert' src='/img/loading.png' />;
+  return (
+    <div className='w-8 h-8 border-r-2 border-b-2 border-l-2 border-white rounded-full animate-spin' />
+  );
 };

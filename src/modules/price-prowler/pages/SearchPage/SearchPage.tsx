@@ -6,9 +6,13 @@ import { api } from '@/common/services/api/api';
 import { ProductCard } from '../../components/ProductCard/ProductCard';
 import { SkeletonProductCard } from '../../components/SkeletonProductCard/SkeletonProductCard';
 import { ModalNeedAuth } from '../../components/Modal/ModalNeedAuth';
+import { NoProductsFound } from '../../components/NoProductsFound/NoProductsFound';
+import { Loading } from '@/modules/ui/components/Loading';
+import { TrackingProduct } from '@/common/types/tracking.response';
 
 export const SearchPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [trackingProducts, setTrackingProducts] = useState<TrackingProduct[]>([]);
   const [formState, setFormState] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [modalNeedAuthIsOpen, setModalNeedAuthIsOpen] = useState(false);
@@ -35,6 +39,10 @@ export const SearchPage = () => {
     setIsLoading(false);
   }, [products]);
 
+  useEffect(() => {
+    api.get('/tracking/get-by-user').then((resp) => setTrackingProducts(resp.data.data));
+  }, []);
+
   return (
     <section>
       <Container flexColumn>
@@ -43,19 +51,31 @@ export const SearchPage = () => {
             <input
               className='p-2 flex-1 focus:outline-none'
               type='text'
+              value={formState}
+              disabled={isLoading}
               onChange={(event) => setFormState(event.target.value)}
               placeholder='Busca tus produtos aqui'
             />
-            <button className='bg-dark-primary p-2 rounded-r'>
-              <img className='w-8 h-8 invert' src='/img/search.png' alt='search icon' />
+            <button disabled={isLoading} className='bg-dark-primary p-2 rounded-r'>
+              {isLoading ? (
+                <Loading />
+              ) : (
+                <img className='w-8 h-8 invert' src='/img/search.png' alt='search icon' />
+              )}
             </button>
           </div>
         </form>
+        {products.length === 0 && !isLoading && <NoProductsFound />}
         <ul className='grid grid-cols-4 gap-4 mt-10'>
           {isLoading &&
             [...Array(9).fill(null)].map((_, index) => <SkeletonProductCard key={index} />)}
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} openModal={toggleModalNeedAuth} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              openModal={toggleModalNeedAuth}
+              tracks={trackingProducts}
+            />
           ))}
         </ul>
         {modalNeedAuthIsOpen && <ModalNeedAuth toggleModal={toggleModalNeedAuth} />}
